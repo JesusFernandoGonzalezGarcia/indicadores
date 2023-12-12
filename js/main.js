@@ -13,7 +13,7 @@ $(document).ready(function () {
             console.log(search);
             
             $.ajax({
-                url: 'busquedaTarea.php',
+                url: 'register.php',
                 type: 'POST',
                 data: {
                     search: search,
@@ -156,7 +156,7 @@ $(document).ready(function () {
 //------------------Listar-------------------------------------------
 function listarTarea() {
     $.ajax({
-        url:'listarTareas.php',
+        url:'register.php',
         type: 'GET',
         success:function(response){
         //console.log(response);
@@ -202,7 +202,7 @@ function listarTarea() {
             if (result.isConfirmed) {
                 let elemento= $(this)[0].parentElement.parentElement;
                 let id= $(elemento).attr('tareaId');
-                $.post('eliminarTarea.php',{id},function(response){               
+                $.post('register.php',{id},function(response){               
                     listarTarea();
                 });
             Swal.fire({
@@ -220,7 +220,7 @@ $(document).on('click','.task-editar',function(){
     let elemento =$(this)[0].parentElement.parentElement;
     let id= $(elemento).attr('tareaId');
     //console.log(id);
-    $.post('editarTarea.php',{id},function(response){
+    $.post('register.php',{id},function(response){
         //console.log(response);
         const task= JSON.parse(response);
         $('#nombre').val(task.nombre);
