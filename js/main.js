@@ -7,34 +7,7 @@ $(document).ready(function () {
     console.log("Todo correcto con jQuery");
     $('#resultadoTarea').hide();
 
-    $('#search').keyup(function(e){
-        if ($('#search').val()) {
-            let search = $('#search').val();
-            console.log(search);
-            
-            $.ajax({
-                url: 'register.php',
-                type: 'POST',
-                data: {
-                    search: search,
-                },
-                success: function(response){
-                    //console.log(response);  
-                    let tarea = JSON.parse(response);     
-                    let template='';         
-                    
-                    tarea.forEach(tarea => {
-                        template+=`<li>
-                            ${tarea.nombre}
-                        </li>`
-                    });  
-                    $('#container').html(template);
-                    $('#resultadoTarea').show();        
-                }
-            })
-            }
 
-    });
 //-------------------------------------------------------------
 
 //-----------------Insertar

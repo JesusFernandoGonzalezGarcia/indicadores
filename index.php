@@ -46,7 +46,7 @@
                                 <textarea id="descripcion" cols="30" rows="10" class="form-control mb-4" placeholder="Descripcion de la tarea"></textarea>
                             </div>
                             
-                            <button id="btn_registrar" type="submit" class="btn btn-success btn-block text-center">
+                            <button id="btn_registrar" accion="insertar" type="submit" class="btn btn-success btn-block text-center">
                                 Registrar <i class="bi bi-save"></i>
                             </button>
                                 <button id="btn_cancelar" type="reset" class="btn btn-secondary btn-block text-center">
